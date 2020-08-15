@@ -132,11 +132,14 @@ class TicTacToe():
         while self.boardType <= 0 or self.boardType > 3:
             inp = input('Enter your choice(1/2/3): ' )
             try:
-                self.boardType = int(inp)
-                if inp>3 or inp<1:
+                inp = int(inp)
+                self.boardType = inp
+                if inp > 3 or inp < 1:
+                    print('Invalid board choice!')
                     continue
             except:
                 print('Invalid board choice!!! Try again.')
+                continue
         print('So, you have selected the following baord to play.')
         print('Use the following reference position numbers when asked to input the position to play.')
         for i in range(0,9):
